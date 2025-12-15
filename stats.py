@@ -14,3 +14,17 @@ def get_char_count(text):
             char_count[letter] += 1
     
     return char_count
+
+def get_count_list(dictionary):
+    result = []
+
+    for char in dictionary:
+        if char.isalpha():
+          result.append({"char": char, "num": dictionary[char]})
+
+    result.sort(key=sort_on, reverse=True)
+
+    return result
+
+def sort_on(items):
+  return items["num"]
